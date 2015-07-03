@@ -7,6 +7,7 @@ import android.os.Handler;
 import cn.bingoogolapple.weibo.R;
 import cn.bingoogolapple.weibo.model.Account;
 import cn.bingoogolapple.weibo.util.Logger;
+import cn.bingoogolapple.weibo.util.SPUtils;
 
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com
@@ -30,8 +31,13 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
                 if (Account.isLogged()) {
-                    Logger.i(TAG, "已登录");
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    if (mApp.getCurrentVersionName().equals(SPUtils.getLatestVersionName())) {
+                        Logger.i(TAG, "已登录-没有新版本");
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    } else {
+                        Logger.i(TAG, "已登录-有新版本");
+                        startActivity(new Intent(SplashActivity.this, NewFeatureActivity.class));
+                    }
                 } else {
                     Logger.i(TAG, "未登录");
                     startActivity(new Intent(SplashActivity.this, AuthActivity.class));
