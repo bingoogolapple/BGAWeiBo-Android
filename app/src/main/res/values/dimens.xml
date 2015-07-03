@@ -1,2 +1,9 @@
 <resources>
+    <dimen name="textSize_12">12sp</dimen>
+
+    <dimen name="small">5dp</dimen>
+    <dimen name="middle">10dp</dimen>
+    <dimen name="large">15dp</dimen>
+
+    <dimen name="plusbg_radius">2dp</dimen>
 </resources>

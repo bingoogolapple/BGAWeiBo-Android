@@ -2,7 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchMatch.Vertical">
 
-    <TextView
-        style="@style/MatchWrap"
-        android:text="Main" />
+    <cn.bingoogolapple.bgabanner.BGAViewPager
+        android:id="@+id/vp_main_content"
+        style="@style/MatchAuto"/>
+
+    <RadioGroup
+        android:id="@+id/rg_main_tab"
+        style="@style/MatchWrap.Horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/layer_maintab_bg">
+
+        <RadioButton
+            android:id="@+id/rb_main_home"
+            style="@style/RbMainTab"
+            android:checked="true"
+            android:drawableTop="@drawable/selector_tab_home"
+            android:text="@string/home" />
+
+        <RadioButton
+            android:id="@+id/rb_main_message"
+            style="@style/RbMainTab"
+            android:drawableTop="@drawable/selector_tab_message"
+            android:text="@string/message" />
+
+        <ImageButton
+            android:id="@+id/ib_main_plus"
+            style="@style/AutoMatch"
+            android:background="@drawable/selector_tab_plusbg"
+            android:src="@drawable/selector_tab_plus"/>
+
+        <RadioButton
+            android:id="@+id/rb_main_discover"
+            style="@style/RbMainTab"
+            android:drawableTop="@drawable/selector_tab_discover"
+            android:text="@string/discover" />
+
+        <RadioButton
+            android:id="@+id/rb_main_me"
+            style="@style/RbMainTab"
+            android:drawableTop="@drawable/selector_tab_me"
+            android:text="@string/me" />
+    </RadioGroup>
 </LinearLayout>
