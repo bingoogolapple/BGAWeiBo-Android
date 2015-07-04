@@ -9,7 +9,7 @@ import com.android.volley.VolleyError;
 
 import cn.bingoogolapple.volley.ApiParams;
 import cn.bingoogolapple.volley.GsonRespDelegate;
-import cn.bingoogolapple.volley.RequestManager;
+import cn.bingoogolapple.volley.BGAVolley;
 import cn.bingoogolapple.weibo.R;
 import cn.bingoogolapple.weibo.model.Account;
 import cn.bingoogolapple.weibo.model.Config;
@@ -78,7 +78,7 @@ public class AuthActivity extends BaseActivity {
         params.with("grant_type", "authorization_code");
         params.with("redirect_uri", config.redirectUri);
         params.with("code", code);
-        RequestManager.post("https://api.weibo.com/oauth2/access_token", params, new GsonRespDelegate<Account>(this) {
+        BGAVolley.post("https://api.weibo.com/oauth2/access_token", params, new GsonRespDelegate<Account>(this) {
             @Override
             protected void onJsonError(Exception e) {
                 ToastUtils.show("解析JSON出错");

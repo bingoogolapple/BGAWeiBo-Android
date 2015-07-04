@@ -14,11 +14,11 @@ import java.util.Map;
  * 创建时间:15/7/2 10:14
  * 描述:
  */
-public class RequestManager {
+public class BGAVolley {
 
     private static RequestQueue sRequestQueue;
 
-    private RequestManager() {
+    private BGAVolley() {
     }
 
     public static void init(Context context) {

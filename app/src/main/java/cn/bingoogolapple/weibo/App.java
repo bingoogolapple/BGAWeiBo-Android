@@ -6,7 +6,7 @@ import android.app.Application;
 import java.util.LinkedList;
 
 import cn.bingoogolapple.volley.ApiRespDelegate;
-import cn.bingoogolapple.volley.RequestManager;
+import cn.bingoogolapple.volley.BGAVolley;
 import cn.bingoogolapple.volley.VolleyRespDelegate;
 import cn.bingoogolapple.weibo.util.Logger;
 import cn.bingoogolapple.weibo.util.ToastUtils;
@@ -32,7 +32,7 @@ public class App extends Application {
 
     private void initVolley() {
         // 初始化Volley
-        RequestManager.init(this);
+        BGAVolley.init(this);
         // 初始化ApiResponseListener
         ApiRespDelegate.init("error_code", "error_description", "content", 21327, 0);
         // 设置为调试阶段打印日志
