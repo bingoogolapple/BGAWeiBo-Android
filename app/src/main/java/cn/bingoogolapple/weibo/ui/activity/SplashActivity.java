@@ -1,6 +1,5 @@
 package cn.bingoogolapple.weibo.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -20,11 +19,7 @@ public class SplashActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_splash);
     }
-
-    @Override
-    protected void setListener() {
-    }
-
+    
     @Override
     protected void processLogic(Bundle savedInstanceState) {
         new Handler().postDelayed(new Runnable() {
@@ -33,17 +28,15 @@ public class SplashActivity extends BaseActivity {
                 if (Account.isLogged()) {
                     if (mApp.getCurrentVersionName().equals(SPUtils.getLatestVersionName())) {
                         Logger.i(TAG, "已登录-没有新版本");
-                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        forwardAndFinish(MainActivity.class);
                     } else {
                         Logger.i(TAG, "已登录-有新版本");
-                        startActivity(new Intent(SplashActivity.this, NewFeatureActivity.class));
+                        forwardAndFinish(NewFeatureActivity.class);
                     }
                 } else {
                     Logger.i(TAG, "未登录");
-                    startActivity(new Intent(SplashActivity.this, AuthActivity.class));
+                    forwardAndFinish(AuthActivity.class);
                 }
-                overridePendingTransition(R.anim.tran_next_in, R.anim.tran_next_out);
-                finish();
             }
         }, 10);
     }

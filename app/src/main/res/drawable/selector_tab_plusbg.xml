@@ -10,7 +10,7 @@
             <item android:bottom="@dimen/small" android:left="@dimen/small" android:right="@dimen/small" android:top="@dimen/small">
                 <shape android:shape="rectangle">
                     <solid android:color="@color/orange_pressed" />
-                    <corners android:radius="@dimen/plusbg_radius" />
+                    <corners android:radius="@dimen/btn_radius" />
                 </shape>
             </item>
         </layer-list>
@@ -25,7 +25,7 @@
             <item android:bottom="@dimen/small" android:left="@dimen/small" android:right="@dimen/small" android:top="@dimen/small">
                 <shape android:shape="rectangle">
                     <solid android:color="@color/orange_normal" />
-                    <corners android:radius="@dimen/plusbg_radius" />
+                    <corners android:radius="@dimen/btn_radius" />
                 </shape>
             </item>
         </layer-list>

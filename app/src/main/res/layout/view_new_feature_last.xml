@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch">
+
+    <ImageView
+        style="@style/MatchMatch"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/new_feature_4" />
+
+
+    <Button
+        android:id="@+id/btn_new_feature_start"
+        style="@style/WrapWrap"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/selector_btn_orange"
+        android:text="@string/start_weibo"
+        android:paddingLeft="@dimen/large_large"
+        android:paddingRight="@dimen/large_large"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/textSize_16"
+        app:layout_marginBottomPercent="20%" />
+
+    <CheckBox
+        android:id="@+id/cb_new_feature_share"
+        style="@style/WrapWrap"
+        android:layout_above="@id/btn_new_feature_start"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/large"
+        android:paddingLeft="@dimen/small"
+        android:button="@drawable/selector_cb_new_feature"
+        android:text="@string/share_to_other"
+        android:textColor="@color/black_dark"
+        android:textSize="@dimen/textSize_16" />
+</com.zhy.android.percent.support.PercentRelativeLayout>

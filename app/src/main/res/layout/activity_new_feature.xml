@@ -4,7 +4,9 @@
     android:id="@+id/banner"
     style="@style/MatchMatch"
     app:banner_pointAutoPlayAble="false"
-    app:banner_pointTopBottomMargin="20dp"
+    app:banner_pointTopBottomMargin="@dimen/large"
     app:banner_pageChangeDuration="1000"
-    app:banner_pointContainerBackground="#22cccccc"
+    app:banner_pointContainerBackground="@android:color/transparent"
+    app:banner_pointFocusedImg="@drawable/shape_banner_point_select"
+    app:banner_pointUnfocusedImg="@drawable/shape_banner_point_normal"
     app:banner_transitionEffect="rotate"/>

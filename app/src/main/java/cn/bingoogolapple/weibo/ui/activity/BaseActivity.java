@@ -1,6 +1,7 @@
 package cn.bingoogolapple.weibo.ui.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.StringRes;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import cn.bingoogolapple.weibo.App;
+import cn.bingoogolapple.weibo.R;
 
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com
@@ -38,7 +40,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     /**
      * 给View控件添加事件监听器
      */
-    protected abstract void setListener();
+    protected void setListener() {
+    }
 
     /**
      * 处理业务逻辑，状态恢复等操作
@@ -92,6 +95,32 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      */
     protected <VT extends View> VT getViewById(@IdRes int id) {
         return (VT) findViewById(id);
+    }
+
+    /**
+     * 跳转到下一个Activity，并且销毁当前activity
+     * @param cls 下一个Activity的Class
+     */
+    public void forwardAndFinish(Class<?> cls) {
+        startActivity(new Intent(this, cls));
+        executeForwardAnim();
+        finish();
+    }
+
+    /**
+     * 跳转到下一个Activity，不销毁当前activity
+     * @param cls 下一个Activity的Class
+     */
+    public void forward(Class<?> cls) {
+        startActivity(new Intent(this, cls));
+        executeForwardAnim();
+    }
+
+    /**
+     * 执行跳转到下一个Activity的动画
+     */
+    public void executeForwardAnim() {
+        overridePendingTransition(R.anim.tran_next_in, R.anim.tran_next_out);
     }
 
 }
