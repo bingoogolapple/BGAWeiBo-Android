@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import cn.bingoogolapple.titlebar.BGATitlebar;
 import cn.bingoogolapple.weibo.App;
 
 /**
@@ -20,6 +21,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     protected String TAG;
     protected App mApp;
     protected View mContentView;
+    protected BGATitlebar mTitlebar;
 
     public void onAttach(Activity activity) {
         super.onAttach(activity);

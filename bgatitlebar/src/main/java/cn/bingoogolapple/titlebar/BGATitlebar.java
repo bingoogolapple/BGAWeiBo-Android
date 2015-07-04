@@ -10,15 +10,14 @@ import android.support.v7.widget.AppCompatCheckedTextView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-
-import com.zhy.android.percent.support.PercentRelativeLayout;
+import android.widget.RelativeLayout;
 
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com
  * 创建时间:15/7/4 下午4:51
  * 描述:
  */
-public class BGATitlebar extends PercentRelativeLayout implements View.OnClickListener {
+public class BGATitlebar extends RelativeLayout implements View.OnClickListener {
     private AppCompatCheckedTextView mTitleCtv;
     private AppCompatButton mLeftBtn;
     private AppCompatButton mRightBtn;
@@ -68,24 +67,33 @@ public class BGATitlebar extends PercentRelativeLayout implements View.OnClickLi
             setTitleText(typedArray.getText(attr));
         } else if (attr == R.styleable.BGATitlebar_bgatitlebar_rightText) {
             setRightText(typedArray.getText(attr));
-        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftIcon) {
-            setLeftIcon(typedArray.getDrawable(attr));
-        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_titleIcon) {
-            setTitleIcon(typedArray.getDrawable(attr));
-        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_rightIcon) {
-            setRightIcon(typedArray.getDrawable(attr));
-        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftTextSize) {
-            mLeftBtn.setTextSize(typedArray.getDimensionPixelOffset(attr, sp2px(getContext(), 12)));
-        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_rightTextSize) {
-            mRightBtn.setTextSize(typedArray.getDimensionPixelOffset(attr, sp2px(getContext(), 12)));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftDrawable) {
+            setLeftDrawable(typedArray.getDrawable(attr));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_titleDrawable) {
+            setTitleDrawable(typedArray.getDrawable(attr));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_rightDrawable) {
+            setRightDrawable(typedArray.getDrawable(attr));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftAndRightTextSize) {
+            int textSize = typedArray.getDimensionPixelSize(attr, sp2px(getContext(), 12));
+            mLeftBtn.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            mRightBtn.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         } else if (attr == R.styleable.BGATitlebar_bgatitlebar_titleTextSize) {
-            mTitleCtv.setTextSize(typedArray.getDimensionPixelOffset(attr, sp2px(getContext(), 16)));
-        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftTextColor) {
+            mTitleCtv.setTextSize(TypedValue.COMPLEX_UNIT_PX, typedArray.getDimensionPixelSize(attr, sp2px(getContext(), 16)));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftAndRightTextColor) {
             mLeftBtn.setTextColor(typedArray.getColorStateList(attr));
-        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_rightTextColor) {
             mRightBtn.setTextColor(typedArray.getColorStateList(attr));
         } else if (attr == R.styleable.BGATitlebar_bgatitlebar_titleTextColor) {
             mTitleCtv.setTextColor(typedArray.getColorStateList(attr));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_titleDrawablePadding) {
+            mTitleCtv.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 3)));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftDrawablePadding) {
+            mLeftBtn.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 3)));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_rightDrawablePadding) {
+            mRightBtn.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 3)));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftAndRightPadding) {
+            int leftAndRightPadding = typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 10));
+            mLeftBtn.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
+            mRightBtn.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
         }
     }
 
@@ -106,7 +114,7 @@ public class BGATitlebar extends PercentRelativeLayout implements View.OnClickLi
         showLeftBtn();
     }
 
-    public void setLeftIcon(Drawable drawable) {
+    public void setLeftDrawable(Drawable drawable) {
         Drawable[] drawables = mLeftBtn.getCompoundDrawables();
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         mLeftBtn.setCompoundDrawables(drawable, drawables[1], drawables[2], drawables[3]);
@@ -130,7 +138,7 @@ public class BGATitlebar extends PercentRelativeLayout implements View.OnClickLi
         setTitleText(getResources().getString(resid));
     }
 
-    public void setTitleIcon(Drawable drawable) {
+    public void setTitleDrawable(Drawable drawable) {
         Drawable[] drawables = mTitleCtv.getCompoundDrawables();
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         mTitleCtv.setCompoundDrawables(drawables[0], drawables[1], drawable, drawables[3]);
@@ -154,7 +162,7 @@ public class BGATitlebar extends PercentRelativeLayout implements View.OnClickLi
         setRightText(getResources().getString(resid));
     }
 
-    public void setRightIcon(Drawable drawable) {
+    public void setRightDrawable(Drawable drawable) {
         Drawable[] drawables = mRightBtn.getCompoundDrawables();
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         mRightBtn.setCompoundDrawables(drawables[0], drawables[1], drawable, drawables[3]);
@@ -184,7 +192,7 @@ public class BGATitlebar extends PercentRelativeLayout implements View.OnClickLi
             if (id == R.id.btn_bgatitlebar_left) {
                 mDelegate.onClickLeftBtn();
             } else if (id == R.id.ctv_bgatitlebar_title) {
-                mDelegate.onClickTitleBtn();
+                mDelegate.onClickTitleCtv();
             } else if (id == R.id.btn_bgatitlebar_right) {
                 mDelegate.onClickRightBtn();
             }
@@ -214,15 +222,17 @@ public class BGATitlebar extends PercentRelativeLayout implements View.OnClickLi
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spValue, context.getResources().getDisplayMetrics());
     }
 
+    /**
+     * 根据实际业务重写相应地方法
+     */
     public static class BGATitlebarDelegate {
         public void onClickLeftBtn() {
         }
 
-        public void onClickTitleBtn() {
+        public void onClickTitleCtv() {
         }
 
         public void onClickRightBtn() {
         }
     }
-
 }

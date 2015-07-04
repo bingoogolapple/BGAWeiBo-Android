@@ -8,6 +8,7 @@ import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import cn.bingoogolapple.titlebar.BGATitlebar;
 import cn.bingoogolapple.weibo.App;
 import cn.bingoogolapple.weibo.R;
 
@@ -20,6 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected String TAG;
     protected App mApp;
     private ProgressDialog mLoadingDialog;
+    protected BGATitlebar mTitlebar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

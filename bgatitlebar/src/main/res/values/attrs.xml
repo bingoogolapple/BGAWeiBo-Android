@@ -2,18 +2,26 @@
 <resources>
 
     <declare-styleable name="BGATitlebar">
+        <!-- 项目中把下面这五项定义在styles.xml里 -->
+        <attr name="bgatitlebar_leftAndRightTextColor" format="reference|color" />
+        <attr name="bgatitlebar_titleTextColor" format="reference|color" />
+        <attr name="bgatitlebar_leftAndRightTextSize" format="reference|dimension" />
+        <attr name="bgatitlebar_titleTextSize" format="reference|dimension" />
+        <attr name="bgatitlebar_leftAndRightPadding" format="reference|dimension" />
+
+        <!-- 下面这几项更具每个页面的业务写在layout中 -->
         <attr name="bgatitlebar_leftText" format="reference|string" />
         <attr name="bgatitlebar_rightText" format="reference|string" />
         <attr name="bgatitlebar_titleText" format="reference|string" />
-        <attr name="bgatitlebar_leftTextColor" format="reference|color" />
-        <attr name="bgatitlebar_rightTextColor" format="reference|color" />
-        <attr name="bgatitlebar_titleTextColor" format="reference|color" />
-        <attr name="bgatitlebar_leftIcon" format="reference" />
-        <attr name="bgatitlebar_titleIcon" format="reference" />
-        <attr name="bgatitlebar_rightIcon" format="reference" />
-        <attr name="bgatitlebar_leftTextSize" format="reference|dimension" />
-        <attr name="bgatitlebar_rightTextSize" format="reference|dimension" />
-        <attr name="bgatitlebar_titleTextSize" format="reference|dimension" />
+        <attr name="bgatitlebar_leftDrawable" format="reference" />
+        <attr name="bgatitlebar_titleDrawable" format="reference" />
+        <attr name="bgatitlebar_rightDrawable" format="reference" />
+        <!-- 当既有titleText，又有titleDrawable时，设置该属性 -->
+        <attr name="bgatitlebar_titleDrawablePadding" format="reference|dimension" />
+        <!-- 当既有leftText，又有leftDrawable时，设置该属性 -->
+        <attr name="bgatitlebar_leftDrawablePadding" format="reference|dimension" />
+        <!-- 当既有rightText，又有rightDrawable时，设置该属性 -->
+        <attr name="bgatitlebar_rightDrawablePadding" format="reference|dimension" />
     </declare-styleable>
 
 </resources>

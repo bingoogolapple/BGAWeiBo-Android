@@ -23,10 +23,21 @@
     <style name="RbMainTab" parent="AutoWrap">
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">@dimen/textSize_12</item>
+        <item name="android:textSize">@dimen/textSize_10</item>
         <item name="android:textColor">@color/selector_maintab</item>
         <item name="android:paddingBottom">@dimen/small</item>
         <item name="android:background">@android:color/transparent</item>
+    </style>
+    
+    <style name="TitleBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/titlebar_height</item>
+        <item name="android:background">@drawable/layer_titlebar_bg</item>
+        <item name="bgatitlebar_leftAndRightTextColor">@color/selector_orange</item>
+        <item name="bgatitlebar_leftAndRightTextSize">@dimen/textSize_16</item>
+        <item name="bgatitlebar_titleTextColor">@color/black_dark</item>
+        <item name="bgatitlebar_titleTextSize">@dimen/textSize_18</item>
+        <item name="bgatitlebar_leftAndRightPadding">@dimen/middle</item>
     </style>
 
 </resources>

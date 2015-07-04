@@ -4,53 +4,66 @@
     style="@style/MatchMatch.Vertical">
 
     <cn.bingoogolapple.titlebar.BGATitlebar
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@drawable/layer_titlebar_bg"
-        app:bgatitlebar_leftIcon="@drawable/selector_nav_friendsearch"
-        app:bgatitlebar_leftText="左边"
-        app:bgatitlebar_leftTextColor="@color/selector_orange"
-        app:bgatitlebar_leftTextSize="6sp"
-        app:bgatitlebar_rightIcon="@drawable/selector_nav_pop"
-        app:bgatitlebar_rightText="右边"
-        app:bgatitlebar_rightTextColor="@color/selector_orange"
-        app:bgatitlebar_rightTextSize="6sp"
-        app:bgatitlebar_titleIcon="@drawable/selector_nav_arrow_orange"
-        app:bgatitlebar_titleText="标题"
-        app:bgatitlebar_titleTextColor="@color/black_dark"
-        app:bgatitlebar_titleTextSize="8sp" />
+        android:id="@+id/titlebar"
+        style="@style/TitleBar"
+        app:bgatitlebar_leftDrawable="@drawable/selector_nav_friendsearch"
+        app:bgatitlebar_rightDrawable="@drawable/selector_nav_pop"
+        app:bgatitlebar_titleDrawablePadding="3dp"
+        app:bgatitlebar_titleDrawable="@drawable/selector_nav_arrow_orange"
+        app:bgatitlebar_titleText="bingoogolapple" />
 
     <cn.bingoogolapple.titlebar.BGATitlebar
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@drawable/layer_titlebar_bg"
-        app:bgatitlebar_leftIcon="@drawable/selector_nav_back"
+        style="@style/TitleBar"
+        app:bgatitlebar_leftDrawablePadding="3dp"
+        app:bgatitlebar_rightDrawablePadding="3dp"
+        app:bgatitlebar_leftDrawable="@drawable/selector_nav_arrow_orange"
         app:bgatitlebar_leftText="左边"
-        app:bgatitlebar_rightIcon="@drawable/selector_nav_more"
+        app:bgatitlebar_rightDrawable="@drawable/selector_nav_arrow_orange"
         app:bgatitlebar_rightText="右边"
-        app:bgatitlebar_titleIcon="@drawable/selector_nav_arrow_orange"
+        app:bgatitlebar_titleDrawable="@mipmap/ic_launcher"
         app:bgatitlebar_titleText="标题" />
 
     <cn.bingoogolapple.titlebar.BGATitlebar
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@drawable/layer_titlebar_bg"
+        style="@style/TitleBar"
+        app:bgatitlebar_leftDrawable="@drawable/selector_nav_arrow_orange"
+        app:bgatitlebar_leftText="左边"
+        app:bgatitlebar_rightDrawable="@drawable/selector_nav_arrow_orange"
+        app:bgatitlebar_rightText="右边"
+        app:bgatitlebar_titleDrawablePadding="5dp"
+        app:bgatitlebar_titleDrawable="@mipmap/ic_launcher"
+        app:bgatitlebar_titleText="标题" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        style="@style/TitleBar"
+        app:bgatitlebar_leftAndRightPadding="20dp"
         app:bgatitlebar_leftText="左边"
         app:bgatitlebar_rightText="右边"
         app:bgatitlebar_titleText="标题" />
 
     <cn.bingoogolapple.titlebar.BGATitlebar
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@drawable/layer_titlebar_bg"
-        app:bgatitlebar_leftIcon="@drawable/selector_nav_back"
-        app:bgatitlebar_rightIcon="@drawable/selector_nav_more"
-        app:bgatitlebar_titleIcon="@drawable/selector_nav_arrow_orange" />
+        style="@style/TitleBar"
+        app:bgatitlebar_leftText="我是左边"
+        app:bgatitlebar_rightText="我是右边按钮"
+        app:bgatitlebar_titleText="我是头部很长很长的标题" />
 
-    <TextView
-        style="@style/MatchMatch"
-        android:gravity="center"
-        android:text="Home"
-        android:textColor="@color/orange_normal"
-        android:textSize="50sp" />
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        style="@style/TitleBar"
+        app:bgatitlebar_leftDrawable="@drawable/selector_nav_back"
+        app:bgatitlebar_rightText="设置"
+        app:bgatitlebar_titleText="我是头部长标题" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        style="@style/TitleBar"
+        app:bgatitlebar_rightDrawable="@drawable/selector_nav_more"
+        app:bgatitlebar_titleDrawable="@mipmap/ic_launcher" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        style="@style/TitleBar"
+        app:bgatitlebar_leftDrawable="@drawable/selector_nav_back"
+        app:bgatitlebar_titleDrawable="@mipmap/ic_launcher" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        style="@style/TitleBar"
+        app:bgatitlebar_titleDrawable="@mipmap/ic_launcher" />
+
 </LinearLayout>

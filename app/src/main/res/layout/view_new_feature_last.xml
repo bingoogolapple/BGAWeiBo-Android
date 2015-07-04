@@ -19,7 +19,7 @@
         android:paddingLeft="@dimen/large_large"
         android:paddingRight="@dimen/large_large"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/textSize_16"
+        android:textSize="@dimen/textSize_18"
         app:layout_marginBottomPercent="20%" />
 
     <CheckBox
@@ -32,5 +32,5 @@
         android:button="@drawable/selector_cb_new_feature"
         android:text="@string/share_to_other"
         android:textColor="@color/black_dark"
-        android:textSize="@dimen/textSize_16" />
+        android:textSize="@dimen/textSize_18" />
 </com.zhy.android.percent.support.PercentRelativeLayout>
