@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical">
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/layer_titlebar_bg"
+        app:bgatitlebar_leftIcon="@drawable/selector_nav_friendsearch"
+        app:bgatitlebar_leftText="左边"
+        app:bgatitlebar_leftTextColor="@color/selector_orange"
+        app:bgatitlebar_leftTextSize="6sp"
+        app:bgatitlebar_rightIcon="@drawable/selector_nav_pop"
+        app:bgatitlebar_rightText="右边"
+        app:bgatitlebar_rightTextColor="@color/selector_orange"
+        app:bgatitlebar_rightTextSize="6sp"
+        app:bgatitlebar_titleIcon="@drawable/selector_nav_arrow_orange"
+        app:bgatitlebar_titleText="标题"
+        app:bgatitlebar_titleTextColor="@color/black_dark"
+        app:bgatitlebar_titleTextSize="8sp" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/layer_titlebar_bg"
+        app:bgatitlebar_leftIcon="@drawable/selector_nav_back"
+        app:bgatitlebar_leftText="左边"
+        app:bgatitlebar_rightIcon="@drawable/selector_nav_more"
+        app:bgatitlebar_rightText="右边"
+        app:bgatitlebar_titleIcon="@drawable/selector_nav_arrow_orange"
+        app:bgatitlebar_titleText="标题" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/layer_titlebar_bg"
+        app:bgatitlebar_leftText="左边"
+        app:bgatitlebar_rightText="右边"
+        app:bgatitlebar_titleText="标题" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/layer_titlebar_bg"
+        app:bgatitlebar_leftIcon="@drawable/selector_nav_back"
+        app:bgatitlebar_rightIcon="@drawable/selector_nav_more"
+        app:bgatitlebar_titleIcon="@drawable/selector_nav_arrow_orange" />
 
     <TextView
         style="@style/MatchMatch"
-        android:textColor="@color/orange_normal"
-        android:textSize="50sp"
         android:gravity="center"
-        android:text="Home" />
+        android:text="Home"
+        android:textColor="@color/orange_normal"
+        android:textSize="50sp" />
 </LinearLayout>

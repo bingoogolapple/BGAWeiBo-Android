@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BGATitlebar">
+        <attr name="bgatitlebar_leftText" format="reference|string" />
+        <attr name="bgatitlebar_rightText" format="reference|string" />
+        <attr name="bgatitlebar_titleText" format="reference|string" />
+        <attr name="bgatitlebar_leftTextColor" format="reference|color" />
+        <attr name="bgatitlebar_rightTextColor" format="reference|color" />
+        <attr name="bgatitlebar_titleTextColor" format="reference|color" />
+        <attr name="bgatitlebar_leftIcon" format="reference" />
+        <attr name="bgatitlebar_titleIcon" format="reference" />
+        <attr name="bgatitlebar_rightIcon" format="reference" />
+        <attr name="bgatitlebar_leftTextSize" format="reference|dimension" />
+        <attr name="bgatitlebar_rightTextSize" format="reference|dimension" />
+        <attr name="bgatitlebar_titleTextSize" format="reference|dimension" />
+    </declare-styleable>
+
+</resources>
