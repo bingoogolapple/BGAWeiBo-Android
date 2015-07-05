@@ -6,10 +6,6 @@
     <cn.bingoogolapple.titlebar.BGATitlebar
         android:id="@+id/titlebar"
         style="@style/TitleBar"
-        app:bgatitlebar_leftDrawable="@drawable/selector_nav_friendsearch"
-        app:bgatitlebar_rightDrawable="@drawable/selector_nav_pop"
-        app:bgatitlebar_titleDrawable="@drawable/selector_nav_arrow_orange"
-        app:bgatitlebar_titleDrawablePadding="3dp"
-        app:bgatitlebar_titleText="bingoogolapple" />
-
+        app:bgatitlebar_leftDrawable="@drawable/selector_nav_back"
+        app:bgatitlebar_titleText="@string/settings" />
 </LinearLayout>

@@ -5,7 +5,7 @@
             <solid android:color="@color/gray_line" />
         </shape>
     </item>
-    <item android:bottom="1px">
+    <item android:bottom="1dp">
         <shape>
             <solid android:color="@color/maintab_titlebar_bg" />
         </shape>

@@ -1,1 +1,1 @@
-include ':app', ':bgavolley', ':bgatitlebar'
+include ':app', ':bgavolley'

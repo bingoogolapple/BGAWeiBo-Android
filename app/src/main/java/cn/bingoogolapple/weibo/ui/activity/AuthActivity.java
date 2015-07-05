@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.android.volley.VolleyError;
-
-import cn.bingoogolapple.volley.ApiParams;
-import cn.bingoogolapple.volley.GsonRespDelegate;
-import cn.bingoogolapple.volley.BGAVolley;
 import cn.bingoogolapple.weibo.R;
+import cn.bingoogolapple.weibo.engine.ApiClient;
+import cn.bingoogolapple.weibo.engine.BaseGsonRespDelegate;
 import cn.bingoogolapple.weibo.model.Account;
 import cn.bingoogolapple.weibo.model.Config;
 import cn.bingoogolapple.weibo.util.Logger;
@@ -71,19 +68,7 @@ public class AuthActivity extends BaseActivity {
 
     private void accessTokenWithCode(String code) {
         Logger.i(TAG, "code = " + code);
-        Config config = Config.getInstance();
-        ApiParams params = new ApiParams();
-        params.with("client_id", config.clientId);
-        params.with("client_secret", config.clientSecret);
-        params.with("grant_type", "authorization_code");
-        params.with("redirect_uri", config.redirectUri);
-        params.with("code", code);
-        BGAVolley.post("https://api.weibo.com/oauth2/access_token", params, new GsonRespDelegate<Account>(this) {
-            @Override
-            protected void onJsonError(Exception e) {
-                ToastUtils.show("解析JSON出错");
-            }
-
+        ApiClient.accessTokenWithCode(code, new BaseGsonRespDelegate<Account>(this) {
             @Override
             protected void onSucess(Account account) {
                 account.save();
@@ -93,11 +78,6 @@ public class AuthActivity extends BaseActivity {
                 } else {
                     forwardAndFinish(NewFeatureActivity.class);
                 }
-            }
-
-            @Override
-            protected void onNetError(VolleyError error) {
-                ToastUtils.show("网络出错");
             }
         });
     }

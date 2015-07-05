@@ -31,7 +31,7 @@ public class HomeFragment extends BaseFragment {
     protected void setListener() {
         mTitlebar.setDelegate(new BGATitlebar.BGATitlebarDelegate() {
             @Override
-            public void onClickLeftBtn() {
+            public void onClickLeftCtv() {
                 ToastUtils.show("点击了加关注");
             }
 
@@ -41,7 +41,7 @@ public class HomeFragment extends BaseFragment {
             }
 
             @Override
-            public void onClickRightBtn() {
+            public void onClickRightCtv() {
                 ToastUtils.show("点击了雷达");
             }
         });
@@ -56,7 +56,6 @@ public class HomeFragment extends BaseFragment {
     protected void onUserVisible() {
 
     }
-
 
     private void showCategoryPw() {
         if (mCategoryPw == null) {

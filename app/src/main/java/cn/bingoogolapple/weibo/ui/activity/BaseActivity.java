@@ -100,7 +100,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     /**
-     * 跳转到下一个Activity，并且销毁当前activity
+     * 跳转到下一个Activity，并且销毁当前Activity
      * @param cls 下一个Activity的Class
      */
     public void forwardAndFinish(Class<?> cls) {
@@ -110,7 +110,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     /**
-     * 跳转到下一个Activity，不销毁当前activity
+     * 跳转到下一个Activity，不销毁当前Activity
      * @param cls 下一个Activity的Class
      */
     public void forward(Class<?> cls) {
@@ -122,7 +122,22 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      * 执行跳转到下一个Activity的动画
      */
     public void executeForwardAnim() {
-        overridePendingTransition(R.anim.tran_next_in, R.anim.tran_next_out);
+        overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
     }
 
+    /**
+     * 回到上一个Activity，并销毁当前Activity
+     */
+    public void backward() {
+        finish();
+        executeBackwardAnim();
+    }
+
+
+    /**
+     * 执行回到到上一个Activity的动画
+     */
+    public void executeBackwardAnim() {
+        overridePendingTransition(R.anim.activity_backward_enter, R.anim.activity_backward_exit);
+    }
 }

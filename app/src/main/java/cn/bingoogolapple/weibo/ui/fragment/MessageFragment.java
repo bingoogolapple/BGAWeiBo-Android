@@ -23,7 +23,7 @@ public class MessageFragment extends BaseFragment {
     protected void setListener() {
         mTitlebar.setDelegate(new BGATitlebar.BGATitlebarDelegate() {
             @Override
-            public void onClickRightBtn() {
+            public void onClickRightCtv() {
                 ToastUtils.show("点击了发起聊天");
             }
         });

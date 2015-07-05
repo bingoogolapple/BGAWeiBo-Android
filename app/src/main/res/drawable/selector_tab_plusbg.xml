@@ -4,7 +4,7 @@
         <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
             <item>
                 <shape>
-                    <solid android:color="@color/maintab_titlebar_bg" />
+                    <solid android:color="@android:color/transparent" />
                 </shape>
             </item>
             <item android:bottom="@dimen/small" android:left="@dimen/small" android:right="@dimen/small" android:top="@dimen/small">
@@ -19,7 +19,7 @@
         <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
             <item>
                 <shape>
-                    <solid android:color="@color/maintab_titlebar_bg" />
+                    <solid android:color="@android:color/transparent" />
                 </shape>
             </item>
             <item android:bottom="@dimen/small" android:left="@dimen/small" android:right="@dimen/small" android:top="@dimen/small">
