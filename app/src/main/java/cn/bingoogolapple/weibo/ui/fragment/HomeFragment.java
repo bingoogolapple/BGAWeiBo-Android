@@ -1,9 +1,14 @@
 package cn.bingoogolapple.weibo.ui.fragment;
 
 import android.os.Bundle;
+import android.widget.PopupWindow;
+
+import java.util.List;
 
 import cn.bingoogolapple.titlebar.BGATitlebar;
 import cn.bingoogolapple.weibo.R;
+import cn.bingoogolapple.weibo.model.HomeCategory;
+import cn.bingoogolapple.weibo.ui.pupupwindow.HomeCategoryPopupWindow;
 import cn.bingoogolapple.weibo.util.Logger;
 import cn.bingoogolapple.weibo.util.ToastUtils;
 
@@ -13,6 +18,8 @@ import cn.bingoogolapple.weibo.util.ToastUtils;
  * 描述:
  */
 public class HomeFragment extends BaseFragment {
+    private HomeCategoryPopupWindow mCategoryPw;
+    private List<HomeCategory> mHomeCategorys;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -30,8 +37,7 @@ public class HomeFragment extends BaseFragment {
 
             @Override
             public void onClickTitleCtv() {
-                ToastUtils.show("点击了标题文本");
-                mTitlebar.setTitleCtvChecked(!mTitlebar.getTitleCtv().isChecked());
+                showCategoryPw();
             }
 
             @Override
@@ -50,4 +56,31 @@ public class HomeFragment extends BaseFragment {
     protected void onUserVisible() {
 
     }
+
+
+    private void showCategoryPw() {
+        if (mCategoryPw == null) {
+            mCategoryPw = new HomeCategoryPopupWindow(getActivity(), mTitlebar.getTitleCtv());
+            mCategoryPw.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                @Override
+                public void onDismiss() {
+                    mTitlebar.setTitleCtvChecked(false);
+                }
+            });
+            mCategoryPw.setDelegate(new HomeCategoryPopupWindow.HomeCategoryPopupWindowDelegate() {
+                @Override
+                public void onSelectCategory(HomeCategory category) {
+                    ToastUtils.show("选择了分类：" + category.title);
+                }
+            });
+        }
+
+        if (mHomeCategorys == null) {
+            mHomeCategorys = HomeCategory.getTestDatas();
+        }
+        mCategoryPw.setCategorys(mHomeCategorys);
+        mCategoryPw.show();
+        mTitlebar.setTitleCtvChecked(true);
+    }
+
 }
