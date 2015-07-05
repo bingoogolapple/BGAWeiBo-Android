@@ -94,7 +94,25 @@ public class BGATitlebar extends RelativeLayout implements View.OnClickListener 
             int leftAndRightPadding = typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 10));
             mLeftBtn.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
             mRightBtn.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_leftMaxWidth) {
+            setLeftBtnMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 85)));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_rightMaxWidth) {
+            setRightBtnMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 85)));
+        } else if (attr == R.styleable.BGATitlebar_bgatitlebar_titleMaxWidth) {
+            setTitleCtvMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 144)));
         }
+    }
+
+    public void setLeftBtnMaxWidth(int maxWidth) {
+        mLeftBtn.setMaxWidth(maxWidth);
+    }
+
+    public void setRightBtnMaxWidth(int maxWidth) {
+        mRightBtn.setMaxWidth(maxWidth);
+    }
+
+    public void setTitleCtvMaxWidth(int maxWidth) {
+        mTitleCtv.setMaxWidth(maxWidth);
     }
 
     public void hiddenLeftBtn() {
@@ -115,9 +133,8 @@ public class BGATitlebar extends RelativeLayout implements View.OnClickListener 
     }
 
     public void setLeftDrawable(Drawable drawable) {
-        Drawable[] drawables = mLeftBtn.getCompoundDrawables();
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        mLeftBtn.setCompoundDrawables(drawable, drawables[1], drawables[2], drawables[3]);
+        mLeftBtn.setCompoundDrawables(drawable, null, null, null);
         showLeftBtn();
     }
 
@@ -139,9 +156,8 @@ public class BGATitlebar extends RelativeLayout implements View.OnClickListener 
     }
 
     public void setTitleDrawable(Drawable drawable) {
-        Drawable[] drawables = mTitleCtv.getCompoundDrawables();
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        mTitleCtv.setCompoundDrawables(drawables[0], drawables[1], drawable, drawables[3]);
+        mTitleCtv.setCompoundDrawables(null, null, drawable, null);
         showTitleCtv();
     }
 
@@ -163,9 +179,8 @@ public class BGATitlebar extends RelativeLayout implements View.OnClickListener 
     }
 
     public void setRightDrawable(Drawable drawable) {
-        Drawable[] drawables = mRightBtn.getCompoundDrawables();
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        mRightBtn.setCompoundDrawables(drawables[0], drawables[1], drawable, drawables[3]);
+        mRightBtn.setCompoundDrawables(null, null, drawable, null);
         showRightBtn();
     }
 

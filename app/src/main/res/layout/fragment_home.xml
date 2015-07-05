@@ -8,17 +8,17 @@
         style="@style/TitleBar"
         app:bgatitlebar_leftDrawable="@drawable/selector_nav_friendsearch"
         app:bgatitlebar_rightDrawable="@drawable/selector_nav_pop"
-        app:bgatitlebar_titleDrawablePadding="3dp"
         app:bgatitlebar_titleDrawable="@drawable/selector_nav_arrow_orange"
+        app:bgatitlebar_titleDrawablePadding="3dp"
         app:bgatitlebar_titleText="bingoogolapple" />
 
     <cn.bingoogolapple.titlebar.BGATitlebar
         style="@style/TitleBar"
+        app:bgatitlebar_leftDrawable="@drawable/selector_nav_arrow_orange"
         app:bgatitlebar_leftDrawablePadding="3dp"
+        app:bgatitlebar_leftText="左边"
+        app:bgatitlebar_rightDrawable="@drawable/selector_nav_arrow_orange"
         app:bgatitlebar_rightDrawablePadding="3dp"
-        app:bgatitlebar_leftDrawable="@drawable/selector_nav_arrow_orange"
-        app:bgatitlebar_leftText="左边"
-        app:bgatitlebar_rightDrawable="@drawable/selector_nav_arrow_orange"
         app:bgatitlebar_rightText="右边"
         app:bgatitlebar_titleDrawable="@mipmap/ic_launcher"
         app:bgatitlebar_titleText="标题" />
@@ -29,21 +29,34 @@
         app:bgatitlebar_leftText="左边"
         app:bgatitlebar_rightDrawable="@drawable/selector_nav_arrow_orange"
         app:bgatitlebar_rightText="右边"
+        app:bgatitlebar_titleDrawable="@mipmap/ic_launcher"
         app:bgatitlebar_titleDrawablePadding="5dp"
-        app:bgatitlebar_titleDrawable="@mipmap/ic_launcher"
         app:bgatitlebar_titleText="标题" />
 
     <cn.bingoogolapple.titlebar.BGATitlebar
         style="@style/TitleBar"
-        app:bgatitlebar_leftAndRightPadding="20dp"
         app:bgatitlebar_leftText="左边"
-        app:bgatitlebar_rightText="右边"
+        app:bgatitlebar_rightText="我是右边按钮"
+        app:bgatitlebar_titleText="标题" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        style="@style/TitleBar"
+        app:bgatitlebar_leftText="左边"
+        app:bgatitlebar_rightMaxWidth="120dp"
+        app:bgatitlebar_rightText="我是右边按钮"
         app:bgatitlebar_titleText="标题" />
 
     <cn.bingoogolapple.titlebar.BGATitlebar
         style="@style/TitleBar"
         app:bgatitlebar_leftText="我是左边"
-        app:bgatitlebar_rightText="我是右边按钮"
+        app:bgatitlebar_rightText="右边"
+        app:bgatitlebar_titleMaxWidth="200dp"
+        app:bgatitlebar_titleText="我是头部很长很长的标题" />
+
+    <cn.bingoogolapple.titlebar.BGATitlebar
+        style="@style/TitleBar"
+        app:bgatitlebar_leftText="我是左边"
+        app:bgatitlebar_rightText="右边"
         app:bgatitlebar_titleText="我是头部很长很长的标题" />
 
     <cn.bingoogolapple.titlebar.BGATitlebar
