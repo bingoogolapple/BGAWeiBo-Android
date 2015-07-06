@@ -2,7 +2,7 @@ package cn.bingoogolapple.badgeview;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.v7.widget.AppCompatRadioButton;
+import android.support.v7.widget.AppCompatCheckedTextView;
 import android.util.AttributeSet;
 
 /**
@@ -10,12 +10,12 @@ import android.util.AttributeSet;
  * 创建时间:15/7/6 下午3:04
  * 描述:
  */
-public class BGABadgeRadioButton extends AppCompatRadioButton implements BGABadgeable {
+public class BGABadgeCheckedTextView extends AppCompatCheckedTextView implements BGABadgeable {
     private BGABadgeViewHelper mBadgeViewHeler;
 
-    public BGABadgeRadioButton(Context context, AttributeSet attrs) {
+    public BGABadgeCheckedTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mBadgeViewHeler = new BGABadgeViewHelper(this, context, attrs, BGABadgeViewHelper.BadgeGravity.RightTop);
+        mBadgeViewHeler = new BGABadgeViewHelper(this, context, attrs, BGABadgeViewHelper.BadgeGravity.RightCenter);
     }
 
     @Override

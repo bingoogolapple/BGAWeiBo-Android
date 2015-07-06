@@ -12,4 +12,15 @@
         app:bgatitlebar_titleDrawablePadding="3dp"
         app:bgatitlebar_titleText="bingoogolapple" />
 
+    <cn.bingoogolapple.badgeview.BGABadgeTextView
+        android:id="@+id/btv_home_test"
+        style="@style/MatchWrap"
+        android:text="BGABadgeTextView"
+        android:textColor="@color/orange_normal" />
+
+    <cn.bingoogolapple.badgeview.BGABadgeImageView
+        android:id="@+id/biv_home_test"
+        style="@style/WrapWrap"
+        android:padding="5dp"
+        android:src="@mipmap/ic_launcher" />
 </LinearLayout>

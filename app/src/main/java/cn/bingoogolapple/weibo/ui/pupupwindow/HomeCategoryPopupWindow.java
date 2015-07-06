@@ -7,13 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.CheckedTextView;
 
 import java.util.List;
 
 import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
 import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
 import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.badgeview.BGABadgeCheckedTextView;
 import cn.bingoogolapple.weibo.R;
 import cn.bingoogolapple.weibo.model.HomeCategory;
 import cn.bingoogolapple.weibo.util.ToastUtils;
@@ -46,7 +46,7 @@ public class HomeCategoryPopupWindow extends BasePopupWindow {
         mCategoryAdapter.setOnItemChildClickListener(new BGAOnItemChildClickListener() {
             @Override
             public void onItemChildClick(View view, int position) {
-                if (mDelegate != null && view.getId() == R.id.ctv_item_home_category) {
+                if (mDelegate != null && view.getId() == R.id.bctv_item_home_category) {
                     HomeCategory homeCategory = mCategoryAdapter.getItem(position);
                     for (HomeCategory category : mHomeCategories) {
                         category.selected = false;
@@ -99,7 +99,7 @@ public class HomeCategoryPopupWindow extends BasePopupWindow {
 
         @Override
         protected void setItemChildListener(BGAViewHolderHelper viewHolderHelper) {
-            viewHolderHelper.setItemChildClickListener(R.id.ctv_item_home_category);
+            viewHolderHelper.setItemChildClickListener(R.id.bctv_item_home_category);
         }
 
         @Override
@@ -110,18 +110,18 @@ public class HomeCategoryPopupWindow extends BasePopupWindow {
                 viewHolderHelper.setVisibility(R.id.ll_item_home_header, View.VISIBLE);
                 viewHolderHelper.setText(R.id.tv_item_home_header, homeCategory.header);
             }
-            CheckedTextView categoryCtv = viewHolderHelper.getView(R.id.ctv_item_home_category);
+            BGABadgeCheckedTextView categoryBctv = viewHolderHelper.getView(R.id.bctv_item_home_category);
             if (homeCategory.selected) {
-                categoryCtv.setChecked(true);
+                categoryBctv.setChecked(true);
             } else {
-                categoryCtv.setChecked(false);
+                categoryBctv.setChecked(false);
             }
             if (homeCategory.hasNewStatus) {
-                categoryCtv.setCompoundDrawablesWithIntrinsicBounds(null, null, mContext.getResources().getDrawable(R.drawable.shape_orange_circle_small), null);
+                categoryBctv.showBadge();
             } else {
-                categoryCtv.setCompoundDrawables(null, null, null, null);
+                categoryBctv.hiddenBadge();
             }
-            categoryCtv.setText(homeCategory.title);
+            categoryBctv.setText(homeCategory.title);
         }
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchWrap.Vertical">
 
     <LinearLayout
@@ -28,13 +29,14 @@
             android:background="@color/black_dark" />
     </LinearLayout>
 
-    <android.support.v7.widget.AppCompatCheckedTextView
-        android:id="@+id/ctv_item_home_category"
+    <cn.bingoogolapple.badgeview.BGABadgeCheckedTextView
+        android:id="@+id/bctv_item_home_category"
         style="@style/MatchWrap"
         android:layout_marginBottom="2dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/selector_popupwindow_item_graybg"
         android:padding="@dimen/small"
+        app:badge_bgColor="@color/orange_normal"
         android:text="@string/home"
         android:textColor="@color/selector_popwindow_item_white_orange"
         android:textSize="@dimen/textSize_16" />

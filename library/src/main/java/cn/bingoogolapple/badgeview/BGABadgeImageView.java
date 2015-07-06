@@ -2,18 +2,18 @@ package cn.bingoogolapple.badgeview;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.v7.widget.AppCompatRadioButton;
 import android.util.AttributeSet;
+import android.widget.ImageView;
 
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com
  * 创建时间:15/7/6 下午3:04
  * 描述:
  */
-public class BGABadgeRadioButton extends AppCompatRadioButton implements BGABadgeable {
+public class BGABadgeImageView extends ImageView implements BGABadgeable {
     private BGABadgeViewHelper mBadgeViewHeler;
 
-    public BGABadgeRadioButton(Context context, AttributeSet attrs) {
+    public BGABadgeImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mBadgeViewHeler = new BGABadgeViewHelper(this, context, attrs, BGABadgeViewHelper.BadgeGravity.RightTop);
     }

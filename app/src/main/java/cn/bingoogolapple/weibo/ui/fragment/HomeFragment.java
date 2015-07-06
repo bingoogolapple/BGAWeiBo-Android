@@ -5,6 +5,8 @@ import android.widget.PopupWindow;
 
 import java.util.List;
 
+import cn.bingoogolapple.badgeview.BGABadgeImageView;
+import cn.bingoogolapple.badgeview.BGABadgeTextView;
 import cn.bingoogolapple.titlebar.BGATitlebar;
 import cn.bingoogolapple.weibo.R;
 import cn.bingoogolapple.weibo.model.HomeCategory;
@@ -25,6 +27,11 @@ public class HomeFragment extends BaseFragment {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_home);
         mTitlebar = getViewById(R.id.titlebar);
+        BGABadgeTextView testBtv = getViewById(R.id.btv_home_test);
+        testBtv.showBadge();
+        BGABadgeImageView testBiv = getViewById(R.id.biv_home_test);
+        testBiv.showBadge();
+
     }
 
     @Override
