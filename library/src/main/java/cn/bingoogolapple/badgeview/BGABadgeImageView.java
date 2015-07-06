@@ -1,6 +1,7 @@
 package cn.bingoogolapple.badgeview;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -29,18 +30,23 @@ public class BGABadgeImageView extends ImageView implements BGABadgeable {
     }
 
     @Override
-    public void showBadge() {
-        mBadgeViewHeler.showBadge();
+    public void showCriclePointBadge() {
+        mBadgeViewHeler.showCirclePointBadge();
     }
 
     @Override
-    public void showBadge(String badgeText) {
-        mBadgeViewHeler.showBadge(badgeText);
+    public void showTextBadge(String badgeText) {
+        mBadgeViewHeler.showTextBadge(badgeText);
     }
 
     @Override
     public void hiddenBadge() {
         mBadgeViewHeler.hiddenBadge();
+    }
+
+    @Override
+    public void showDrawableBadge(Bitmap bitmap) {
+        mBadgeViewHeler.showDrawable(bitmap);
     }
 
 }

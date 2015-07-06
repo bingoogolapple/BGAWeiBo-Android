@@ -1,5 +1,6 @@
 package cn.bingoogolapple.badgeview;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 
 /**
@@ -18,18 +19,26 @@ public interface BGABadgeable {
     /**
      * 显示圆点标记
      */
-    void showBadge();
+    void showCriclePointBadge();
 
     /**
      * 显示文字标记
+     *
      * @param badgeText
      */
-    void showBadge(String badgeText);
+    void showTextBadge(String badgeText);
 
     /**
      * 隐藏标记
      */
     void hiddenBadge();
+
+    /**
+     * 显示图像标记
+     *
+     * @param bitmap
+     */
+    void showDrawableBadge(Bitmap bitmap);
 
     int getWidth();
 

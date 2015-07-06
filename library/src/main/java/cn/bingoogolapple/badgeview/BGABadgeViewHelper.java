@@ -2,6 +2,7 @@ package cn.bingoogolapple.badgeview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -17,6 +18,7 @@ import android.util.TypedValue;
  * 描述:
  */
 public class BGABadgeViewHelper {
+    private Bitmap mBitmap;
     private BGABadgeable mBadgeable;
     private Paint mBadgePaint;
     /**
@@ -87,6 +89,8 @@ public class BGABadgeViewHelper {
         mIsShowBadge = false;
 
         mBadgeText = null;
+
+        mBitmap = null;
     }
 
     private void initCustomAttrs(Context context, AttributeSet attrs) {
@@ -124,13 +128,36 @@ public class BGABadgeViewHelper {
     public void drawBadge(Canvas canvas) {
         mBadgeable.beforeDrawBadge(canvas);
         if (mIsShowBadge) {
-            drawTextBadge(canvas);
+            if (mBitmap != null) {
+                drawDrawableBadge(canvas);
+            } else {
+                drawTextBadge(canvas);
+            }
         }
     }
 
-    // TODO
+    /**
+     * 绘制图像标记
+     *
+     * @param canvas
+     */
     private void drawDrawableBadge(Canvas canvas) {
-
+        float badgeLeft = mBadgeable.getWidth() - mBadgeHorizontalMargin - mBitmap.getWidth();
+        float badgeTop = mBadgeVerticalMargin;
+        switch (mBadgeGravity) {
+            case RightTop:
+                badgeTop = mBadgeVerticalMargin;
+                break;
+            case RightCenter:
+                badgeTop = (mBadgeable.getHeight() - mBitmap.getHeight()) / 2;
+                break;
+            case RightBottom:
+                badgeTop = mBadgeable.getHeight() - mBitmap.getHeight() - mBadgeVerticalMargin;
+                break;
+            default:
+                break;
+        }
+        canvas.drawBitmap(mBitmap, badgeLeft, badgeTop, mBadgePaint);
     }
 
     /**
@@ -195,18 +222,26 @@ public class BGABadgeViewHelper {
         }
     }
 
-    public void showBadge() {
-        showBadge(null);
+    public void showCirclePointBadge() {
+        showTextBadge(null);
     }
 
-    public void showBadge(String badgeText) {
-        mIsShowBadge = true;
+    public void showTextBadge(String badgeText) {
+        mBitmap = null;
         mBadgeText = badgeText;
+        mIsShowBadge = true;
         mBadgeable.postInvalidate();
     }
 
     public void hiddenBadge() {
         mIsShowBadge = false;
+        mBitmap = null;
+        mBadgeable.postInvalidate();
+    }
+
+    public void showDrawable(Bitmap bitmap) {
+        mBitmap = bitmap;
+        mIsShowBadge = true;
         mBadgeable.postInvalidate();
     }
 

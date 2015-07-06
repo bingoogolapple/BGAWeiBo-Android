@@ -19,8 +19,17 @@
         android:textColor="@color/orange_normal" />
 
     <cn.bingoogolapple.badgeview.BGABadgeImageView
-        android:id="@+id/biv_home_test"
+        android:id="@+id/biv_home_test1"
         style="@style/WrapWrap"
         android:padding="5dp"
         android:src="@mipmap/ic_launcher" />
+
+    <cn.bingoogolapple.badgeview.BGABadgeImageView
+        android:id="@+id/biv_home_test2"
+        style="@style/WrapWrap"
+        android:padding="7dp"
+        android:src="@mipmap/ic_launcher"
+        app:badge_horizontalMargin="0dp"
+        app:badge_verticalMargin="0dp"
+        app:badge_gravity="rightBottom" />
 </LinearLayout>

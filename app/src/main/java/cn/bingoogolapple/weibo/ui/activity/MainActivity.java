@@ -81,16 +81,16 @@ public class MainActivity extends BaseActivity {
     }
 
     private void testBadgeView() {
-        mHomeBrb.showBadge("12345");
-        mMessageBrb.showBadge("bingo");
-        mDiscoverBrb.showBadge("1000");
-        mMeBrb.showBadge("1");
+        mHomeBrb.showTextBadge("10");
+        mMessageBrb.showTextBadge("1");
+        mDiscoverBrb.showTextBadge("...");
+        mMeBrb.showTextBadge("1");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mHomeBrb.showBadge("1");
-                mDiscoverBrb.hiddenBadge();
-                mMeBrb.showBadge();
+                mHomeBrb.showTextBadge("1");
+//                mDiscoverBrb.hiddenBadge();
+                mMeBrb.showCriclePointBadge();
             }
         },5000);
     }

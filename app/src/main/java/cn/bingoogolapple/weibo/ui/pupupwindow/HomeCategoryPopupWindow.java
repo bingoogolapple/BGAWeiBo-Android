@@ -117,7 +117,7 @@ public class HomeCategoryPopupWindow extends BasePopupWindow {
                 categoryBctv.setChecked(false);
             }
             if (homeCategory.hasNewStatus) {
-                categoryBctv.showBadge();
+                categoryBctv.showCriclePointBadge();
             } else {
                 categoryBctv.hiddenBadge();
             }

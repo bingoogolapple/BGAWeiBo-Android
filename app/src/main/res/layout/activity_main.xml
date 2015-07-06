@@ -26,8 +26,8 @@
             android:drawableTop="@drawable/selector_tab_message"
             android:text="@string/message"
             app:badge_gravity="rightTop"
-            app:badge_padding="6dp"
             app:badge_horizontalMargin="15dp"
+            app:badge_padding="6dp"
             app:badge_verticalMargin="10dp" />
 
         <ImageButton
@@ -41,11 +41,11 @@
             style="@style/RbMainTab"
             android:drawableTop="@drawable/selector_tab_discover"
             android:text="@string/discover"
-            app:badge_bgColor="#9f9"
+            app:badge_bgColor="@color/orange_normal"
             app:badge_gravity="rightCenter"
             app:badge_horizontalMargin="20dp"
             app:badge_padding="5dp"
-            app:badge_textColor="#f00"
+            app:badge_textColor="@android:color/white"
             app:badge_textSize="15sp" />
 
         <cn.bingoogolapple.badgeview.BGABadgeRadioButton
