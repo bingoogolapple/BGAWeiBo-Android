@@ -8,8 +8,8 @@ android {
         applicationId "cn.bingoogolapple.weibo"
         minSdkVersion ANDROID_BUILD_MIN_SDK_VERSION as int
         targetSdkVersion ANDROID_BUILD_TARGET_SDK_VERSION as int
-        versionCode 1
-        versionName "1.0"
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
         // 项目发布时改为false
         buildConfigField "boolean", "IS_DEVELOP_MODE", "true"
     }
@@ -21,7 +21,7 @@ dependencies {
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile project(':bgavolley')
-//    compile project(':bgatitlebar')
+    compile project(':library')
 
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.nineoldandroids:library:2.4.0'

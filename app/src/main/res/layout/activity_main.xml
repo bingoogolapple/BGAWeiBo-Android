@@ -5,57 +5,56 @@
 
     <cn.bingoogolapple.bgabanner.BGAViewPager
         android:id="@+id/vp_main_content"
-        style="@style/MatchAuto"/>
+        style="@style/MatchAuto" />
 
     <RadioGroup
         android:id="@+id/rg_main_tab"
         style="@style/MatchWrap.Horizontal"
-        android:gravity="center_vertical"
-        android:background="@drawable/layer_maintab_bg">
+        android:background="@drawable/layer_maintab_bg"
+        android:gravity="center_vertical">
 
-        <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
+        <cn.bingoogolapple.badgeview.BGABadgeRadioButton
             android:id="@+id/brb_main_home"
             style="@style/RbMainTab"
             android:checked="true"
-            app:badge_bgColor="#9f9"
-            app:badge_textColor="#f00"
-            app:badge_textSize="15sp"
-            app:badge_topMargin="10dp"
-            app:badge_rightMargin="15dp"
-            app:badge_padding="5dp"
             android:drawableTop="@drawable/selector_tab_home"
             android:text="@string/home" />
 
-        <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
+        <cn.bingoogolapple.badgeview.BGABadgeRadioButton
             android:id="@+id/brb_main_message"
             style="@style/RbMainTab"
-            app:badge_isCenterVertical="true"
-            app:badge_rightMargin="15dp"
             android:drawableTop="@drawable/selector_tab_message"
-            android:text="@string/message" />
+            android:text="@string/message"
+            app:badge_gravity="rightTop"
+            app:badge_padding="6dp"
+            app:badge_horizontalMargin="15dp"
+            app:badge_verticalMargin="10dp" />
 
         <ImageButton
             android:id="@+id/ib_main_plus"
             style="@style/AutoMatch"
             android:background="@drawable/selector_tab_plusbg"
-            android:src="@drawable/selector_tab_plus"/>
+            android:src="@drawable/selector_tab_plus" />
 
-        <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
+        <cn.bingoogolapple.badgeview.BGABadgeRadioButton
             android:id="@+id/brb_main_discover"
             style="@style/RbMainTab"
-            app:badge_bgColor="#9f9"
-            app:badge_textColor="#f00"
-            app:badge_textSize="15sp"
-            app:badge_topMargin="10dp"
-            app:badge_rightMargin="20dp"
-            app:badge_padding="5dp"
             android:drawableTop="@drawable/selector_tab_discover"
-            android:text="@string/discover" />
+            android:text="@string/discover"
+            app:badge_bgColor="#9f9"
+            app:badge_gravity="rightCenter"
+            app:badge_horizontalMargin="20dp"
+            app:badge_padding="5dp"
+            app:badge_textColor="#f00"
+            app:badge_textSize="15sp" />
 
-        <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
+        <cn.bingoogolapple.badgeview.BGABadgeRadioButton
             android:id="@+id/brb_main_me"
             style="@style/RbMainTab"
             android:drawableTop="@drawable/selector_tab_me"
-            android:text="@string/me" />
+            android:text="@string/me"
+            app:badge_gravity="rightBottom"
+            app:badge_horizontalMargin="20dp"
+            app:badge_verticalMargin="10dp" />
     </RadioGroup>
 </LinearLayout>

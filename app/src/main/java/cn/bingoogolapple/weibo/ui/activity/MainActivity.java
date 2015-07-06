@@ -9,13 +9,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 
+import cn.bingoogolapple.badgeview.BGABadgeRadioButton;
 import cn.bingoogolapple.bgabanner.BGAViewPager;
 import cn.bingoogolapple.weibo.R;
 import cn.bingoogolapple.weibo.ui.fragment.DiscoverFragment;
 import cn.bingoogolapple.weibo.ui.fragment.HomeFragment;
 import cn.bingoogolapple.weibo.ui.fragment.MeFragment;
 import cn.bingoogolapple.weibo.ui.fragment.MessageFragment;
-import cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton;
 import cn.bingoogolapple.weibo.util.ToastUtils;
 
 public class MainActivity extends BaseActivity {
@@ -81,18 +81,18 @@ public class MainActivity extends BaseActivity {
     }
 
     private void testBadgeView() {
-        mHomeBrb.showBadge();
-        mMessageBrb.showBadge(10);
-        mDiscoverBrb.showBadge(100);
+        mHomeBrb.showBadge("12345");
+        mMessageBrb.showBadge("bingo");
+        mDiscoverBrb.showBadge("1000");
+        mMeBrb.showBadge("1");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mHomeBrb.showBadge(1);
-                mMessageBrb.showBadge();
+                mHomeBrb.showBadge("1");
                 mDiscoverBrb.hiddenBadge();
                 mMeBrb.showBadge();
             }
-        },2000);
+        },5000);
     }
 
     @Override
