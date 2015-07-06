@@ -1,6 +1,7 @@
 package cn.bingoogolapple.weibo.ui.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,6 +15,7 @@ import cn.bingoogolapple.weibo.ui.fragment.DiscoverFragment;
 import cn.bingoogolapple.weibo.ui.fragment.HomeFragment;
 import cn.bingoogolapple.weibo.ui.fragment.MeFragment;
 import cn.bingoogolapple.weibo.ui.fragment.MessageFragment;
+import cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton;
 import cn.bingoogolapple.weibo.util.ToastUtils;
 
 public class MainActivity extends BaseActivity {
@@ -26,12 +28,22 @@ public class MainActivity extends BaseActivity {
     private DiscoverFragment mDiscoverFragment;
     private MeFragment mMeFragment;
 
+    private BGABadgeRadioButton mHomeBrb;
+    private BGABadgeRadioButton mMessageBrb;
+    private BGABadgeRadioButton mDiscoverBrb;
+    private BGABadgeRadioButton mMeBrb;
+
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         mContentVp = getViewById(R.id.vp_main_content);
         mTabRg = getViewById(R.id.rg_main_tab);
         mPlusIb = getViewById(R.id.ib_main_plus);
+
+        mHomeBrb = getViewById(R.id.brb_main_home);
+        mMessageBrb = getViewById(R.id.brb_main_message);
+        mDiscoverBrb = getViewById(R.id.brb_main_discover);
+        mMeBrb = getViewById(R.id.brb_main_me);
     }
 
     @Override
@@ -41,16 +53,16 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.rb_main_home:
+                    case R.id.brb_main_home:
                         mContentVp.setCurrentItem(0, false);
                         break;
-                    case R.id.rb_main_message:
+                    case R.id.brb_main_message:
                         mContentVp.setCurrentItem(1, false);
                         break;
-                    case R.id.rb_main_discover:
+                    case R.id.brb_main_discover:
                         mContentVp.setCurrentItem(2, false);
                         break;
-                    case R.id.rb_main_me:
+                    case R.id.brb_main_me:
                         mContentVp.setCurrentItem(3, false);
                         break;
                     default:
@@ -64,6 +76,23 @@ public class MainActivity extends BaseActivity {
     protected void processLogic(Bundle savedInstanceState) {
         mContentVp.setAllowUserScrollable(false);
         mContentVp.setAdapter(new ContentAdapter(getSupportFragmentManager()));
+
+        testBadgeView();
+    }
+
+    private void testBadgeView() {
+        mHomeBrb.showBadge();
+        mMessageBrb.showBadge(10);
+        mDiscoverBrb.showBadge(100);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mHomeBrb.showBadge(1);
+                mMessageBrb.showBadge();
+                mDiscoverBrb.hiddenBadge();
+                mMeBrb.showBadge();
+            }
+        },2000);
     }
 
     @Override

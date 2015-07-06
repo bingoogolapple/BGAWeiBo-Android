@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BGABadgeView">
+        <!-- 标记背景色 -->
+        <attr name="badge_bgColor" format="reference|color" />
+        <!-- 标记数字的颜色 -->
+        <attr name="badge_textColor" format="reference|color" />
+        <!-- 标记数字字体大小 -->
+        <attr name="badge_textSize" format="reference|dimension" />
+        <!-- 标记背景与控件上边缘间距离 -->
+        <attr name="badge_topMargin" format="reference|dimension" />
+        <!-- 标记背景与控件右边缘间距离 -->
+        <attr name="badge_rightMargin" format="reference|dimension" />
+        <!-- 标记数字边缘与标记背景边缘间的距离 -->
+        <attr name="badge_padding" format="reference|dimension" />
+        <!-- 标记是否在控件右侧垂直居中（应用场景：新浪微博首页顶部分组PopupWindow中item右侧的橘色标记） -->
+        <attr name="badge_isCenterVertical" format="boolean" />
+    </declare-styleable>
+</resources>

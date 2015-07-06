@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical">
 
     <cn.bingoogolapple.bgabanner.BGAViewPager
@@ -13,15 +14,23 @@
         android:background="@drawable/layer_maintab_bg">
 
         <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
-            android:id="@+id/rb_main_home"
+            android:id="@+id/brb_main_home"
             style="@style/RbMainTab"
             android:checked="true"
+            app:badge_bgColor="#9f9"
+            app:badge_textColor="#f00"
+            app:badge_textSize="15sp"
+            app:badge_topMargin="10dp"
+            app:badge_rightMargin="15dp"
+            app:badge_padding="5dp"
             android:drawableTop="@drawable/selector_tab_home"
             android:text="@string/home" />
 
         <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
-            android:id="@+id/rb_main_message"
+            android:id="@+id/brb_main_message"
             style="@style/RbMainTab"
+            app:badge_isCenterVertical="true"
+            app:badge_rightMargin="15dp"
             android:drawableTop="@drawable/selector_tab_message"
             android:text="@string/message" />
 
@@ -32,13 +41,19 @@
             android:src="@drawable/selector_tab_plus"/>
 
         <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
-            android:id="@+id/rb_main_discover"
+            android:id="@+id/brb_main_discover"
             style="@style/RbMainTab"
+            app:badge_bgColor="#9f9"
+            app:badge_textColor="#f00"
+            app:badge_textSize="15sp"
+            app:badge_topMargin="10dp"
+            app:badge_rightMargin="20dp"
+            app:badge_padding="5dp"
             android:drawableTop="@drawable/selector_tab_discover"
             android:text="@string/discover" />
 
         <cn.bingoogolapple.weibo.ui.widget.BGABadgeRadioButton
-            android:id="@+id/rb_main_me"
+            android:id="@+id/brb_main_me"
             style="@style/RbMainTab"
             android:drawableTop="@drawable/selector_tab_me"
             android:text="@string/me" />
