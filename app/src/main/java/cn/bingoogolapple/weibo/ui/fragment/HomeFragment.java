@@ -1,15 +1,19 @@
 package cn.bingoogolapple.weibo.ui.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.PopupWindow;
 
 import java.util.List;
 
 import cn.bingoogolapple.titlebar.BGATitlebar;
 import cn.bingoogolapple.weibo.R;
+import cn.bingoogolapple.weibo.engine.ApiClient;
+import cn.bingoogolapple.weibo.engine.WeiBoRespDelegate;
+import cn.bingoogolapple.weibo.model.Account;
 import cn.bingoogolapple.weibo.model.HomeCategory;
+import cn.bingoogolapple.weibo.model.User;
 import cn.bingoogolapple.weibo.ui.pupupwindow.HomeCategoryPopupWindow;
-import cn.bingoogolapple.weibo.util.Logger;
 import cn.bingoogolapple.weibo.util.ToastUtils;
 
 /**
@@ -49,12 +53,30 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-        Logger.i(TAG, "processLogic");
+        String name = Account.getInstance().username;
+        if (!TextUtils.isEmpty(name)) {
+            mTitlebar.setTitleText(name);
+        }
     }
 
     @Override
     protected void onUserVisible() {
+        loadUserInfo();
+    }
 
+    private void friendsTimeline() {
+
+    }
+
+    private void loadUserInfo() {
+        ApiClient.loadUserInfo(new WeiBoRespDelegate<User>(null) {
+            @Override
+            protected void onSucess(User user) {
+                mTitlebar.setTitleText(user.name);
+                Account.getInstance().username = user.name;
+                Account.getInstance().save();
+            }
+        });
     }
 
     private void showCategoryPw() {

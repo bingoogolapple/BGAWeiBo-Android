@@ -3,6 +3,7 @@
     <string name="exit_tip">再按一次返回键退出微博</string>
     <string name="loading_data_tip">数据加载中，请稍候</string>
     <string name="network_error_tip">请检查您的网络!</string>
+    <string name="server_error_tip">服务器异常，请稍后再试!</string>
 
 
     <string name="share_to_other">分享给大家</string>
