@@ -1,1 +1,1 @@
-include ':app', ':bgavolley', ':library'
+include ':app', ':bgavolley'

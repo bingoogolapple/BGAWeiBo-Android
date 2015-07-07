@@ -1,7 +1,6 @@
 package cn.bingoogolapple.weibo.ui.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -81,18 +80,10 @@ public class MainActivity extends BaseActivity {
     }
 
     private void testBadgeView() {
-        mHomeBrb.showTextBadge("10");
+        mHomeBrb.showTextBadge("110");
         mMessageBrb.showTextBadge("1");
         mDiscoverBrb.showTextBadge("...");
-        mMeBrb.showTextBadge("1");
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mHomeBrb.showTextBadge("1");
-//                mDiscoverBrb.hiddenBadge();
-                mMeBrb.showCriclePointBadge();
-            }
-        },5000);
+        mMeBrb.showTextBadge("2");
     }
 
     @Override

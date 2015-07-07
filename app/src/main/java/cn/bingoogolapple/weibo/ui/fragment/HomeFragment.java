@@ -1,14 +1,10 @@
 package cn.bingoogolapple.weibo.ui.fragment;
 
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Handler;
 import android.widget.PopupWindow;
 
 import java.util.List;
 
-import cn.bingoogolapple.badgeview.BGABadgeImageView;
-import cn.bingoogolapple.badgeview.BGABadgeTextView;
 import cn.bingoogolapple.titlebar.BGATitlebar;
 import cn.bingoogolapple.weibo.R;
 import cn.bingoogolapple.weibo.model.HomeCategory;
@@ -29,34 +25,6 @@ public class HomeFragment extends BaseFragment {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_home);
         mTitlebar = getViewById(R.id.titlebar);
-        BGABadgeTextView testBtv = getViewById(R.id.btv_home_test);
-        testBtv.showCriclePointBadge();
-        BGABadgeImageView test1Biv = getViewById(R.id.biv_home_test1);
-        test1Biv.showCriclePointBadge();
-
-        final BGABadgeImageView test2Biv = getViewById(R.id.biv_home_test2);
-        test2Biv.showDrawableBadge(BitmapFactory.decodeResource(getResources(), R.mipmap.avatar_vip));
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                test2Biv.hiddenBadge();
-            }
-        }, 3000);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                test2Biv.showCriclePointBadge();
-            }
-        }, 6000);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                test2Biv.showDrawableBadge(BitmapFactory.decodeResource(getResources(), R.mipmap.avatar_vip));
-            }
-        },9000);
     }
 
     @Override

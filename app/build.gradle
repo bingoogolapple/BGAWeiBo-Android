@@ -21,7 +21,6 @@ dependencies {
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile project(':bgavolley')
-    compile project(':library')
 
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.nineoldandroids:library:2.4.0'
@@ -31,4 +30,5 @@ dependencies {
     compile 'cn.bingoogolapple:bga-titlebar:1.0.0@aar'
     compile 'cn.bingoogolapple:bga-adapter:1.0.2@aar'
     compile 'cn.bingoogolapple:bga-refreshlayout:1.0.3@aar'
+    compile 'cn.bingoogolapple:bga-badgeview:1.0.0@aar'
 }
